@@ -19,16 +19,16 @@ name :: Person -> Name
 name (n,a,p) = n
 
 oneRoot :: Float -> Float -> Float -> Float
-oneRoot a b c = -b/(2.0*a)
+oneRoot a b c =-b/(2.0*a)
 
 twoRoots :: Float -> Float -> Float -> (Float, Float)
 twoRoots a b c = (d-e, d+e)
     where
-        d = -b/(2.0*a)
-        e = sqrt(b^2-4.0*a*c)/(2.0*a)
+        d =-b/(2.0*a)
+        e = sqrt (b^2-4.0*a*c)/(2.0*a)
 
 roots :: Float -> Float -> Float -> String
-roots a b c 
+roots a b c
     | b^2 == 4.0*a*c = show (oneRoot a b c)
     | b^2 > 4.0*a*c = show f ++ " " ++ show s
     | otherwise = "no roots"
@@ -57,10 +57,10 @@ member (a:as) b
 
 digits :: String -> String
 digits [] = ""
-digits (a:as) 
+digits (a:as)
     | ('0' <= a && a <= '9') = (a: digits as)
-    | otherwise = (digits as)
+    | otherwise = digits as
 
 sumPairs :: [(Int, Int)] -> [Int]
 sumPairs [] = []
-sumPairs ((a,b):as) = (a+b : sumPairs as) 
+sumPairs ((a,b):as) = (a+b : sumPairs as)
