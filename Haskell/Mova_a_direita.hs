@@ -8,4 +8,4 @@ addEspacos n | n == 0 = ""
              | otherwise = addEspacos (n-1) ++ " "
 
 paraDireita :: Int -> String -> String
-paraDireita n str = addEspacos(n) ++ str
+paraDireita n str = addEspacos n ++ str

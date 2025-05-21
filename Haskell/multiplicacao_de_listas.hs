@@ -9,6 +9,6 @@ main = do
     
 mul2 :: [Int] -> [Int] -> [Int]
 mul2 [] [] = []
-mul2 (a:as) [] = (a*0 : mul2 as [])
-mul2 [] (b:bs) = (b*0 : mul2 [] bs)
-mul2 (a:as) (b:bs) = (a*b : mul2 as bs) 
+mul2 (a:as) [] = a*0 : mul2 as []
+mul2 [] (b:bs) = b*0 : mul2 [] bs
+mul2 (a:as) (b:bs) = a*b : mul2 as bs

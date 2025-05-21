@@ -20,7 +20,7 @@ maxiThree m n p = res
     where res = max (max m n) p
 
 equalCount :: Int -> Int -> Int -> Int -> Int
-equalCount mx x y z | x == mx && y == mx && z == mx = 3 
+equalCount mx x y z | x == mx && y == mx && z == mx = 3
                     | (x == mx && y == mx) || (z == mx && y == mx) || (z == mx && x == mx) = 2
                     | x == mx || y == mx || z == mx = 1
                     | otherwise = 0
@@ -36,16 +36,16 @@ maxThreeOccours m n p = (mx, eqCount)
 ehPrimo :: Int -> Bool
 ehPrimo 1 = False
 ehPrimo n = testaDivisores (n-1)
-    where 
+    where
         testaDivisores :: Int -> Bool
         testaDivisores 1 = True
         testaDivisores x | mod n x /= 0 = testaDivisores (x-1)
                          | otherwise = False
 
 primoSi :: Int -> Int -> Bool
-primoSi n m = dividindo((min n m))
+primoSi n m = dividindo (min n m)
     where
         dividindo :: Int -> Bool
         dividindo 1 = True
         dividindo x | mod n x == 0 && mod m x == 0 = False
-                    | otherwise = dividindo(x-1) 
+                    | otherwise = dividindo (x-1)
