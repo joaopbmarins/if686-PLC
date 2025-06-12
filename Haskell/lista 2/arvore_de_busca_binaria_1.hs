@@ -10,15 +10,13 @@ main = do
 
 
 isBST :: Ord t => Tree t -> Bool
-isBST Node t = isSorted (collapse t)
+isBST t = isSorted (collapse t)
+       where
+              collapse :: Tree t -> [t]
+              collapse Nilt = []
+              collapse (Node t l r) = collapse l ++ [t] ++ collapse r
 
-
-
-collapse :: Tree t -> [t]
-collapse Nilt = []
-collapse (Node t l r) = collapse l ++ [t] ++ collapse r
-
-isSorted :: [Int] -> Bool
-isSorted [] = True
-isSorted [x] = True
-isSorted (a:b:xs) = a < b && isSorted (b:xs)
+              isSorted :: Ord t => [t] -> Bool
+              isSorted [] = True
+              isSorted [x] = True
+              isSorted (a:b:xs) = a < b && isSorted (b:xs)
