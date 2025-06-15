@@ -11,12 +11,13 @@ main = do
 
 
 dna1 :: Tree Int -> [String]
-dna1 t = [" "]
+dna1 t = separar8 (collapse t) 0
 
 separar8 :: String -> Int -> [String]
+separar8 [] _ = []
 separar8 (a:as) count
     | count < 8 = separar8Aux a (separar8 as (count+1))
-    | otherwise = [] : separar8 as 0
+    | otherwise = [] : separar8Aux a (separar8 as 1)
 
 separar8Aux :: Char -> [String] -> [String]
 separar8Aux letra [] = [[letra]]
