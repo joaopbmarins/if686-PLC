@@ -43,3 +43,6 @@ decodificandoS (a:as) ult_letra count
     | count > 1 = ult_letra : decodificandoS (a:as) ult_letra (count - 1)
     | a <= '9' && a >= '0' = decodificandoS as ult_letra (ord a - ord '0')
     | otherwise = a : decodificandoS as a 0
+
+
+--FALTA A ULTIMA QUESTÃO

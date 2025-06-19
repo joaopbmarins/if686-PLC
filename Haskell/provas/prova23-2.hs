@@ -1,3 +1,5 @@
+--INCOMPLETA
+
 fibonacci :: [Int]
 fibonacci = 0 : 1 : zipWith (+) fibonacci (tail fibonacci)
 
