@@ -28,3 +28,4 @@ public class Main
 	}
 }
 
+//sudo apt install openjdk-17-jdk-headless
