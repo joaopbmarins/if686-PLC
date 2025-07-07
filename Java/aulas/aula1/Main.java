@@ -5,7 +5,7 @@ public class Main
 		String s1 = "ricardo";
 		String s2 = "ricardo";
 		
-		char letra = s1.charAt(0);
+		//char letra = s1.charAt(0);
 
 
 		if (s1 == s2){//s1.equals(s2)) {
