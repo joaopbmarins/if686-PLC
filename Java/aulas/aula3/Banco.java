@@ -3,13 +3,14 @@ package Java.aulas.aula3;
 public class Banco {
     private Conta[] contas;
     private int indice;
+    private final double taxa = 0.01;
 
     public Banco() {
         contas = new Conta[100];
         indice = 0;
     }
 
-    public void cadastrar(Conta c) {
+    public void cadastrarConta(Conta c) {
         contas[indice] = c;
     }
 
@@ -51,4 +52,21 @@ public class Banco {
         }
         return 0.0;
     }
+
+    public void transferir(String conta1,String conta2, double valor) {
+        Conta c1,c2;
+        c1 = this.procurarConta(conta1); 
+        c2 = this.procurarConta(conta2); 
+        c1.debitar(valor); 
+        c2.creditar(valor); 
+        }
+      
+      public void renderJuros(String numero) {
+        Conta c;
+        c = this.procurarConta(numero); 
+          if (c instanceof Poupanca) {
+            ((Poupanca) c).renderJuros(taxa);
+          }
+        }
+      
 }
