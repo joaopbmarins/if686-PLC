@@ -1,4 +1,4 @@
-package Java.aulas.aula3;
+package Java.aulas.aula4;
 
 public class Banco {
     private Conta[] contas;
@@ -25,9 +25,8 @@ public class Banco {
                 return resposta;
             }
         }
-
-        return null;
-        }
+        throw new RuntimeException("Não achou a conta: " + numero);
+    }
 
     public void creditar(String num_c, double valor) {
         Conta c = procurarConta(num_c);
@@ -60,14 +59,29 @@ public class Banco {
         c2 = this.procurarConta(conta2); 
         c1.debitar(valor); 
         c2.creditar(valor); 
-        }
+        
+    }
       
-      public void renderJuros(String numero) {
+    public void renderJuros(String numero) {
         Conta c;
         c = this.procurarConta(numero); 
-          if (c instanceof Poupanca) {
-            ((Poupanca) c).renderJuros(taxa);
-          }
-        }
+
+        if (c instanceof Poupanca) {
+        ((Poupanca) c).renderJuros(taxa);}
+        else {
+        throw new RuntimeException("Não é poupança");}
+
+    }
       
+    public void renderBonus(String numero_ce){
+        Conta c = procurarConta(numero_ce);
+
+        if (c instanceof ContaEspecial){
+            ((ContaEspecial) c).renderBonus();
+        }
+        else{
+            throw new RuntimeException("Nao é conta especial");
+        }
+
+    }
 }
