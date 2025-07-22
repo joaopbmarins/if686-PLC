@@ -8,7 +8,7 @@ public class Main
 		//char letra = s1.charAt(0);
 
 
-		if (s1 == s2){//s1.equals(s2)) {
+		if (s1.equals(s2)){//s1 == s2 é errado 
 			System.out.println("igual");
 		} else {
 			System.out.println("diferente");
