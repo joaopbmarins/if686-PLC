@@ -1,6 +1,6 @@
+package Java.lista.questao1;
 
-
-public abstract class Pessoa implements Comparable {
+public abstract class Pessoa implements Comparable<Pessoa> {
 	private Integer idade;
 	private String nome;
 
@@ -10,8 +10,9 @@ public abstract class Pessoa implements Comparable {
 		this.nome = nome;
 	}
 
-	public Integer compareTo(Pessoa person){
-		return this.idade.compareTo(person.idade);
+	@Override
+	public int compareTo(Pessoa p){
+		return this.idade.compareTo(p.idade);
 	}
 
 	public abstract Ticket getTicketType();
@@ -24,9 +25,8 @@ public abstract class Pessoa implements Comparable {
 		return idade;
 	}
 
-	@Override
 	public String toString(){
-        return getName()+":"+getAge()+"["+getTicketType()+"]";
+        return getName()+": "+getAge()+"["+getTicketType()+"]";
 	}
 
 

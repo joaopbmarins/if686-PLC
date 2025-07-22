@@ -1,3 +1,5 @@
+package Java.lista.questao1;
+
 public class Adulto extends Pessoa {
 
 
