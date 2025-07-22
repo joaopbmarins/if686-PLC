@@ -17,10 +17,10 @@ public class Etanol implements BombaDeCombustivel{
                 capacidadeMaximaTanque = automovel.get_capacidadeMaximaTanque();
         TipoMotor motorAutomovel = automovel.get_motor();
         if(motorAutomovel == TipoMotor.FLEX || motorAutomovel == TipoMotor.ETANOL)
-            if(quantidadeLitros <= capacidadeMaximaTanque)
-                automovel.set_combustivelAtual(Math.min(quantidadeLitros + combustivelAtual, capacidadeMaximaTanque));
+            if(quantidadeLitros+combustivelAtual <= capacidadeMaximaTanque)
+                automovel.set_combustivelAtual(quantidadeLitros + combustivelAtual);
             else{
-                throw  new CombustivelOverflow("A quantidade de Etanol a ser adicionada é maior que a capacidade do Tanque Vazia");
+                throw  new CombustivelOverflow("A quantidade de Etanol a ser adicionada extrapola a capacidade do Tanque");
             }
         else{
             throw new CombustivelNaoCompativel("Carro incompátivel com ETANOL");

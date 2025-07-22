@@ -10,27 +10,27 @@ public class Main {
         Gasolina g = new Gasolina(5.5);
 
         e.calcularCusto(30.0);
-        e.abastecer(c1, 30.0);
+        e.abastecer(c2, 30.0);
 
-        g.calcularCusto(50);
+        g.calcularCusto(15.0);
 
         try{
-            g.abastecer(c1, 50.0);
+            e.abastecer(c3, 15.0);
         } catch (CombustivelNaoCompativel | CombustivelOverflow ex) {
             System.out.println(ex.getMessage());
         }
 
         try{
-            g.abastecer(c2, 15.0);
+            g.abastecer(c3, 50.0);
         } catch (CombustivelNaoCompativel | CombustivelOverflow ex) {
             System.out.println(ex.getMessage());
         }
 
-        g.calcularCusto(40.0);
+        g.calcularCusto(10.0);
         g.ajustarPreco(6.55);
 
-        g.calcularCusto(40.0);
-        g.abastecer(c3, 40.0);
+        g.calcularCusto(10.0);
+        g.abastecer(c1, 10.0);
 
     }
 }
