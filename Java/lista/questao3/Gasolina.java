@@ -12,7 +12,7 @@ public class Gasolina implements BombaDeCombustivel{
     }
 
     @Override
-    public void abastecer(Automovel automovel, double quantidadeLitros) {
+    public void abastecer(Automovel automovel, double quantidadeLitros) throws CombustivelNaoCompativel, CombustivelOverflow{
         double combustivelAtual = automovel.get_combustivelAtual(),
                 capacidadeMaximaTanque = automovel.get_capacidadeMaximaTanque();
         TipoMotor motorAutomovel = automovel.get_motor();
