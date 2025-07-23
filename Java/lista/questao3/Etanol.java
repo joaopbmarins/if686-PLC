@@ -1,7 +1,7 @@
 package Java.lista.questao3;
 
 public class Etanol implements BombaDeCombustivel{
-    double precoLitro;
+    private double precoLitro;
 
     Etanol(){
         this.precoLitro = 0;
