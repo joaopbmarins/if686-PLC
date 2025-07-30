@@ -5,7 +5,7 @@ public class Automovel {
     private final double capacidadeMaximaTanque;
     private final TipoMotor motor;
 
-    Automovel(Double capacidadeMaximaTanque, TipoMotor motor) {
+    public Automovel(Double capacidadeMaximaTanque, TipoMotor motor) {
         this.CombustivelAtual = 0;
         this.capacidadeMaximaTanque = capacidadeMaximaTanque;
         this.motor = motor;

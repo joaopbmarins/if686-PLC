@@ -3,7 +3,7 @@ package Java.lista.questao1;
 public class Crianca extends Pessoa {
 
 
-    Crianca(Integer idade, String nome) {
+    public Crianca(Integer idade, String nome) {
         super(idade, nome);
     }
 

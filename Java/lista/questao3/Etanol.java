@@ -3,11 +3,11 @@ package Java.lista.questao3;
 public class Etanol implements BombaDeCombustivel{
     private double precoLitro;
 
-    Etanol(){
+    public Etanol(){
         this.precoLitro = 0;
     }
 
-    Etanol(Double precoLitro){
+    public Etanol(Double precoLitro){
         this.precoLitro = precoLitro;
     }
 

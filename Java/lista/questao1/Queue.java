@@ -6,11 +6,11 @@ import java.util.Collections;
 public class Queue<T extends Pessoa>{
     private ArrayList<T> Pessoas;
 
-    Queue(){
+    public Queue(){
         this.Pessoas = new ArrayList<>(10);
-    }public
+    }
 
-    Queue(int size){
+    public Queue(int size){
         this.Pessoas = new ArrayList<>(size);
     }
 

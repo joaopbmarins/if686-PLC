@@ -5,7 +5,7 @@ public abstract class Pessoa implements Comparable<Pessoa> {
 	private String nome;
 
 
-	Pessoa(Integer idade, String nome) {
+	public Pessoa(Integer idade, String nome) {
 		this.idade = idade;
 		this.nome = nome;
 	}
