@@ -1,5 +1,9 @@
 package Java.lista.questao2;
 
+import java.util.Comparator;
+import java.util.Arrays;
+
+
 public class Sistema {
     private Cliente[] clientes;
     private int index = 0; 
@@ -71,7 +75,16 @@ public class Sistema {
             c.addPontos(qtdBatata, getPriceBatata(), getBonus());
             c.addPontos(qtdRefri, getPriceRefri(), getBonus());
         }
+    }
 
+    public void finalizarMes(){
 
+        Cliente[] ativos = Arrays.copyOf(clientes, index);
+        Arrays.sort(ativos, Comparator.comparingInt(Cliente::getPontos).reversed());
+
+        for(int i=0;i<index;i++){
+            int i2 = i+1;
+            System.out.println(i2 + ". Nome: "+ativos[i].getNome() + " Pontuação: " + ativos[i].pontos + " Tipo de Cliente: " + ativos[i].tipo);
+        }
     }
 }

@@ -20,9 +20,10 @@ public abstract class Cliente {
         return this.mes_cadastro;
     }
 
+    public int getPontos(){
+        return this.pontos;
+    }
+
     protected abstract void addPontos(int qtd, double preco, double bonusVip);
-
-    public abstract void addCompra();
-
-    
+   
 }

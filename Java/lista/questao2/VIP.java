@@ -8,12 +8,8 @@ public class VIP extends Cliente{
     }
 
     @Override
-    public void addCompra() {
-        
-    }
-
-    @Override
     protected void addPontos(int qtd, double preco, double bonusVip){
-        pontos += Math.ceil((1 + bonusVip) * ((preco / 10)*qtd));
+        int pontos_add =  (int) Math.ceil((1 + bonusVip) * ((preco / 10)*qtd));
+        this.pontos += pontos_add + (pontos_add % 10);
     }
 }
